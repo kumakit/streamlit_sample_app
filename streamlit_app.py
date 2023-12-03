@@ -1,6 +1,7 @@
 import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
+import japanize_matplotlib
 
 st.title('kuma data')
 st.caption('Pythonアプリの置き場所')
