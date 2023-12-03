@@ -1,7 +1,6 @@
 import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
-import japanize_matplotlib
 
 st.title('kuma data')
 st.caption('Pythonアプリの置き場所')
@@ -22,7 +21,7 @@ y = 1 / (1 + np.exp(-x) )
 
 # グラフの設定
 ax.plot(x, y) # プロット
-ax.set_title('シグモイド関数', fontsize = 12)
+ax.set_title('sigmoid function', fontsize = 12)
 ax.set_xlabel('x', fontsize = 12)
 ax.set_ylabel('f(x)', fontsize = 12)
 plt.grid() # グリッド描画
