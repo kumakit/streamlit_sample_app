@@ -21,7 +21,7 @@ y = 1 / (1 + np.exp(-x) )
 
 # グラフの設定
 ax.plot(x, y) # プロット
-ax.set_title('sigmoid function', fontsize = 12)
+ax.set_title('Sigmoid function', fontsize = 12)
 ax.set_xlabel('x', fontsize = 12)
 ax.set_ylabel('f(x)', fontsize = 12)
 plt.grid() # グリッド描画
