@@ -22,7 +22,7 @@ y = 1 / (1 + np.exp(-x) )
 
 # グラフの設定
 ax.plot(x, y) # プロット
-ax.set_title('シグモイド関数', fontsize = 12, fontname = 'MS Gothic')
+ax.set_title('シグモイド関数', fontsize = 12)
 ax.set_xlabel('x', fontsize = 12, fontname = 'MS Gothic')
 ax.set_ylabel('f(x)', fontsize = 12, fontname = 'MS Gothic')
 plt.grid() # グリッド描画
