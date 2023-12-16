@@ -77,3 +77,4 @@ ax.set_xlabel('x', fontsize = 12)
 ax.set_ylabel('f(x)', fontsize = 12)
 ax.grid() # グリッド描画
 st.pyplot(fig)
+
