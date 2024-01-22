@@ -6,7 +6,7 @@ st.title('kuma data')
 st.caption('Pythonアプリの置き場所')
 
 st.subheader('サブヘッダーのテスト')
-st.text('本文のテストです。本文はここです')
+st.text('本文のテスト')
 
 st.link_button("Netlify page", "https://kumadata.netlify.app/")
 
