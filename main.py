@@ -2,7 +2,7 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 
-st.title('streamlit 超入門')
+st.title('streamlit 超入門_20240222')
 
 st.write('DataFrame')
 
