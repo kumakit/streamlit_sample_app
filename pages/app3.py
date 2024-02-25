@@ -35,9 +35,9 @@ def point_balance():
 
   return points
 
-st.title('音声出力アプリ(高速)')
+st.title('音声出力アプリ（高速）')
 url = "https://voicevox.su-shiki.com/su-shikiapis/#step3"
-st.write("本サイトは [WEB版VOICEVOX API（高速）](%s)を利用して音声合成をしています。" % url)
+st.write("このアプリは [WEB版VOICEVOX API（高速）](%s)を利用して音声合成をしています。" % url)
 
 st.markdown('### データ準備')
 
