@@ -24,23 +24,9 @@ def synthsize_speech(input_text, speaker='ずんだもん（ノーマル）'):
 
   # 音素データ生成
   text = urllib.parse.quote(input_text)
-  response = requests.post("https://api.tts.quest/v3/voicevox/synthesis?text=" + text + "&speaker=" + speaker_type[speaker])
-  res_json = response.json()
-  #print(json.dumps(response.json(), indent=4))
-
-  # 音声合成のステータスを確認する
-  res_status = requests.get(res_json["audioStatusUrl"]).json()
-
-  # ステータスがTrueになるまで待機する
-  while res_status["isAudioReady"] is not True:
-      # 一定時間待つ
-      time.sleep(0.5)
-      # ステータスを再度確認する
-      res_status = requests.post(res_json["audioStatusUrl"]).json()
-
-  res_wav = requests.get(res_json["wavDownloadUrl"]).content
-
-  return res_wav
+  response = requests.post("https://deprecatedapis.tts.quest/v2/voicevox/audio/?key=Y5R236H-n8r1934&speaker=" + speaker_type[speaker] + "&pitch=0&intonationScale=1&speed=1&text="+ text)
+ 
+  return response
 
 st.title('音声出力アプリ')
 
@@ -89,5 +75,5 @@ if input_data is not None:
     comment.write('音声出力を作成しています')
     def_response = synthsize_speech(input_data, speaker)
 
-    st.audio(def_response)
+    st.audio(def_response.content)
     comment.write('完了しました')
