@@ -24,11 +24,20 @@ def synthsize_speech(input_text, speaker='ずんだもん（ノーマル）'):
 
   # 音素データ生成
   text = urllib.parse.quote(input_text)
-  response = requests.post("https://deprecatedapis.tts.quest/v2/voicevox/audio/?key=Y5R236H-n8r1934&speaker=" + speaker_type[speaker] + "&pitch=0&intonationScale=1&speed=1&text="+ text)
- 
+  response = requests.get("https://deprecatedapis.tts.quest/v2/voicevox/audio/?key=Y5R236H-n8r1934&speaker=" + speaker_type[speaker] + "&pitch=0&intonationScale=1&speed=1&text="+ text)
+
   return response
 
-st.title('音声出力アプリ')
+def point_balance():
+  results = requests.get("https://deprecatedapis.tts.quest/v2/api/?key=Y5R236H-n8r1934")
+  results_json = results.json()
+  points = results_json['points']
+
+  return points
+
+st.title('音声出力アプリ(高速)')
+url = "https://voicevox.su-shiki.com/su-shikiapis/#step3"
+st.write("本サイトは [WEB版VOICEVOX API（高速）](%s)を利用して音声合成をしています。" % url)
 
 st.markdown('### データ準備')
 
@@ -76,4 +85,7 @@ if input_data is not None:
     def_response = synthsize_speech(input_data, speaker)
 
     st.audio(def_response.content)
+    #points_balance = point_balance()
+    st.write("Point Balance : " + f"{point_balance():,}" + " / 10,000,000")
+    #st.write(str(point_balance['points'])+ "/10000000" + int(point_balance['points']/10000000*100 + "%") )
     comment.write('完了しました')

@@ -42,7 +42,9 @@ def synthsize_speech(input_text, speaker='ずんだもん（ノーマル）'):
 
   return res_wav
 
-st.title('音声出力アプリ')
+st.title('音声出力アプリ(低速)')
+url = "https://voicevox.su-shiki.com/su-shikiapis/ttsquest/"
+st.write("本サイトは [WEB版VOICEVOX API（低速）](%s)を利用して音声合成をしています。" % url)
 
 st.markdown('### データ準備')
 
