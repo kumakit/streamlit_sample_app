@@ -36,7 +36,7 @@ def synthsize_speech(input_text):
     text = urllib.parse.quote(input_text)
     response = requests.get("https://deprecatedapis.tts.quest/v2/voicevox/audio/?key=Y5R236H-n8r1934&speaker=3&pitch=0&intonationScale=1&speed=1&text="+ text)
 
-    return response
+    return responses
 
 def point_balance():
     results = requests.get("https://deprecatedapis.tts.quest/v2/api/?key=Y5R236H-n8r1934")
