@@ -78,4 +78,4 @@ if st.button('八王子の天気予報を教えて！'):
     #points_balance = point_balance()
     st.write("Point Balance : " + f"{point_balance():,}" + " / 10,000,000")
     #st.write(str(point_balance['points'])+ "/10000000" + int(point_balance['points']/10000000*100 + "%") )
-    comment.write('音声出力が完了しました！')
+    comment.write('天気予報の音声ができしました！')
