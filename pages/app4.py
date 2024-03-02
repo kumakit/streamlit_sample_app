@@ -51,11 +51,11 @@ st.write("このアプリは [WEB版VOICEVOX API（高速）](%s)を利用して
 st.markdown('### 天気予報の音声出力')
 
 wether_data = None
-if st.button('VOICEVOX：ずんだもん（ノーマル）で八王子の天気予報を音声出力すする！'):
+if st.button('八王子の天気予報を教えて！'):
     wether_data = todays_wether()
     st.info(wether_data)
     comment = st.empty()
-    comment.write('音声出力を作成しています')
+    comment.write('音声を作成しています。ちょっと待ってね')
 
     audio_placeholder = st.empty()
     contents = synthsize_speech(wether_data).content #入力する音声ファイル
@@ -72,8 +72,10 @@ if st.button('VOICEVOX：ずんだもん（ノーマル）で八王子の天気�
     time.sleep(0.5) #これがないと上手く再生されません
     audio_placeholder.markdown(audio_html, unsafe_allow_html=True)
 
+    st.write('以下でも再生できます')
+    st.audio(contents)
 
     #points_balance = point_balance()
     st.write("Point Balance : " + f"{point_balance():,}" + " / 10,000,000")
     #st.write(str(point_balance['points'])+ "/10000000" + int(point_balance['points']/10000000*100 + "%") )
-    comment.write('完了しました')
+    comment.write('音声出力が完了しました！')
